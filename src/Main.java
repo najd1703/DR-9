@@ -1,15 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        leapYear(1588);
-        leapYear(1598);
-        leapYear(1688);
-
-
-        printDeviceVersion(1, 2011);
-        printDeviceVersion(0, 2015);
-        printDeviceVersion(1, 2016);
-
-
+        isLeapYear(1588);
+        isLeapYear(1598);
+        isLeapYear(1688);
+        printDeviceVersion(0, 2014);
+        printDeviceVersion(1, 2012);
+        printDeviceVersion(0, 2016);
         int deliveryDistance = 32;
         int days = distanceTime(deliveryDistance);
         if (days > 0) {
@@ -21,8 +17,7 @@ public class Main {
 
     }
 
-
-    public static void leapYear(int year) {
+    public static void isLeapYear(int year) {
 
         if (year > 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)) {
             System.out.println(year + " год високосный");
@@ -31,38 +26,24 @@ public class Main {
         }
     }
 
-    public static void main1(String[] args) {
-        int year = 1588;
-        leapYear(year);
-
-    }
-
-
     public static void printDeviceVersion(int deviceOS, int deviceYear) {
 
         if (deviceOS == 0) {
-            if (deviceYear >= 2015) {
+            if (deviceYear <= 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else {
                 System.out.println("Установите обычную версию приложения для iOS по ссылке");
             }
         } else if (deviceOS == 1) {
-            if (deviceYear >= 2015) {
+            if (deviceYear <= 2015) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             } else {
-                System.out.println("Установите обычную версию приложения для iOS по ссылке");
+                System.out.println("Установите обычную версию приложения для Android по ссылке");
             }
         } else {
             System.out.println("Выберете операционную систему вашего устройства");
         }
     }
-
-    public static void task2() {
-        int clientDeviceOs = 0;
-        int clientDeviceYear = 2015;
-        printDeviceVersion(clientDeviceOs, clientDeviceYear);
-    }
-
 
     public static int distanceTime(int distanceKM) {
         if (distanceKM <= 20) {
@@ -76,5 +57,6 @@ public class Main {
         }
 
 
-}}
+    }
+}
 
